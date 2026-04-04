@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import './Portfolio.css'
 
 const projects = [
@@ -32,6 +32,8 @@ const projects = [
 ]
 
 export default function Portfolio() {
+  const [menuOpen, setMenuOpen] = useState(false)
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -67,7 +69,24 @@ export default function Portfolio() {
             <li><a href="/work" className="active">Work</a></li>
             <li><a href="/#contact" className="cta">Contact</a></li>
           </ul>
+          <button
+            className={`hamburger${menuOpen ? ' open' : ''}`}
+            onClick={() => setMenuOpen(o => !o)}
+            aria-label="Toggle menu"
+            aria-expanded={menuOpen}
+          >
+            <span /><span /><span />
+          </button>
         </div>
+        {menuOpen && (
+          <div className="mobile-menu">
+            <a href="/#services" onClick={() => setMenuOpen(false)}>Services</a>
+            <a href="/#about" onClick={() => setMenuOpen(false)}>About</a>
+            <a href="/#process" onClick={() => setMenuOpen(false)}>Process</a>
+            <a href="/work" className="active" onClick={() => setMenuOpen(false)}>Work</a>
+            <a href="/#contact" className="cta" onClick={() => setMenuOpen(false)}>Contact</a>
+          </div>
+        )}
       </nav>
 
       {/* HERO */}
