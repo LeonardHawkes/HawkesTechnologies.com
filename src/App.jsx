@@ -51,11 +51,21 @@ export default function App() {
       {/* NAV */}
       <nav className="nav">
         <div className="nav-inner">
-          <a href="#" className="nav-logo">Hawkes Technologies</a>
+          <a href="#" className="nav-logo">
+            <svg viewBox="260 30 160 260" height="26" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <g transform="translate(290, 40)">
+                <polygon points="0,90 36,55 36,240 0,240" fill="currentColor"/>
+                <rect x="36" y="128" width="28" height="28" fill="currentColor"/>
+                <polygon points="64,20 100,0 100,240 64,240" fill="currentColor"/>
+              </g>
+            </svg>
+            Hawkes Technologies
+          </a>
           <ul className="nav-links">
             <li><a href="#services">Services</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#process">Process</a></li>
+            <li><a href="/work">Work</a></li>
             <li><a href="#contact" className="cta">Contact</a></li>
           </ul>
         </div>
@@ -133,7 +143,7 @@ export default function App() {
             </div>
           </div>
           <div className="about-visual fade-up">
-            <div className="about-monogram">HT</div>
+            <img src="/logo.svg" className="about-logo-img" alt="Hawkes Technologies logo" />
           </div>
         </div>
       </section>
@@ -185,6 +195,7 @@ export default function App() {
           <ul className="footer-links">
             <li><a href="#services">Services</a></li>
             <li><a href="#about">About</a></li>
+            <li><a href="/work">Work</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
