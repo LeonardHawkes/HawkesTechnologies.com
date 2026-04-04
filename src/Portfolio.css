@@ -1,0 +1,153 @@
+/* ── PORTFOLIO HERO ── */
+.portfolio-hero {
+  padding-top: 140px;
+  padding-bottom: 100px;
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+}
+.portfolio-hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(42px, 7vw, 72px);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--near-black);
+  margin-bottom: 24px;
+}
+.portfolio-hero h1 em {
+  font-style: italic;
+  color: var(--mid);
+}
+
+/* ── ACTIVE NAV LINK ── */
+.nav-links a.active {
+  color: var(--near-black);
+  font-weight: 500;
+}
+
+/* ── PROJECTS ── */
+.projects-section {
+  padding: 80px 32px;
+  max-width: var(--max);
+  margin: 0 auto;
+}
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.project-card {
+  border-radius: 16px;
+  border: 0.5px solid var(--border);
+  overflow: hidden;
+  background: var(--white);
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+}
+.project-card-top {
+  background: color-mix(in srgb, var(--accent) 10%, var(--off-white));
+  padding: 28px 28px 24px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  min-height: 96px;
+}
+.project-domain {
+  font-size: 13px;
+  color: color-mix(in srgb, var(--accent) 75%, #000);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+.project-arrow {
+  width: 18px;
+  height: 18px;
+  color: color-mix(in srgb, var(--accent) 60%, #000);
+  flex-shrink: 0;
+  opacity: 0;
+  transform: translate(-4px, 4px);
+  transition: opacity 0.2s var(--ease), transform 0.2s var(--ease);
+}
+.project-card:hover .project-arrow {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+.project-card-body {
+  padding: 24px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.project-meta {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+.project-category,
+.project-platform {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 100px;
+  background: var(--off-white);
+  color: var(--mid);
+}
+.project-name {
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: var(--near-black);
+  margin-bottom: 10px;
+}
+.project-desc {
+  font-size: 14px;
+  color: var(--mid);
+  line-height: 1.65;
+}
+
+/* ── PORTFOLIO CTA ── */
+.portfolio-cta {
+  text-align: center;
+  padding: 100px 32px;
+  border-top: 0.5px solid var(--border);
+  max-width: var(--max);
+  margin: 0 auto;
+}
+.portfolio-cta h2 {
+  font-family: var(--serif);
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+}
+.portfolio-cta p {
+  color: var(--mid);
+  font-size: 17px;
+  margin-bottom: 32px;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .projects-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 580px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  .projects-section {
+    padding: 60px 20px;
+  }
+}
